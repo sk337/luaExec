@@ -9,7 +9,7 @@ else
 fi
 
 # Check if running under WSL and bypass flag is not set
-if [[ "$(uname -r)" == *Microsoft* && "$bypass_wsl" == false ]]; then
+if [[ "$(uname -r)" == *microsoft* && "$bypass_wsl" == false ]]; then
     # Running under WSL, use exe versions of luac
     if [[ "$1" == "-r" || "$1" == "--release" ]]; then
         # Run in release mode with exe version
