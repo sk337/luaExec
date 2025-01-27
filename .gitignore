@@ -92,3 +92,6 @@ _deps
 CMakeUserPresets.json
 
 external/lua/
+
+# ignore luac ouput
+luac.out

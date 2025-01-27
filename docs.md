@@ -22,7 +22,16 @@ Decodes data from base64
 Returns a Unique identifier for the device
 
 ---
-### `random_bytes(count: number?) -> string` ❌
+### `random_bytes(count: number?) -> string` ✅
 
 returns `count` or 16 if not provided random bytes as a hex formatted string.
 
+---
+### `random_int(min: number, max: number) -> number` ✅
+
+returns an `int` between `min` and `max`
+
+---
+### `random_float() -> number` ✅
+
+return a float between 0 and 1
