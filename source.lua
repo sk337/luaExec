@@ -36,7 +36,7 @@ local tree = require("src.fancyTree");
 tree.create_tree(5);
 print("Just a funky tree lol")
 
-local testCount = 2
+local testCount = 4
 
 local target= "Hello, World"
 local encoded = base64_encode(target)
@@ -45,7 +45,7 @@ assert(encoded:len()%4==0, "Length of encoded in not divisible by 2")
 print("test 2/"..testCount)
 assert(target == base64_decode(encoded), "Decode results in different string")
 print("test 3/"..testCount)
-assert(1 < random_float > 0, "Random float is not in range")
+assert(1 < random_float() > 0, "Random float is not in range")
 print("test 4/"..testCount)
 local v = random_int(0,5)
 assert(0<=v<=5, "Random Int is not in range")

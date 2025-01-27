@@ -22,7 +22,7 @@ int main() {
     }
 
     // Open standard Lua libraries
-    // luaL_openlibs(L);
+    luaL_openlibs(L);
 
     lua_register(L, "base64_decode", base64_decode);
     lua_register(L, "base64_encode", base64_encode);
