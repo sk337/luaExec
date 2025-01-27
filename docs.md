@@ -35,3 +35,13 @@ returns an `int` between `min` and `max`
 ### `random_float() -> number` ✅
 
 return a float between 0 and 1
+
+---
+### `getEnviron() -> string` ✅
+
+Gets the current Host operating system and returns of the following values
+
+* WINDOWS
+* LINUX
+* MACOS
+* UNKNOWN

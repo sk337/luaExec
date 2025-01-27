@@ -10,6 +10,7 @@
 #include "crypt/hwid.h"
 #include "crypt/base64.h"
 #include "crypt/rand.h"
+#include "utils/getEnviron.h"
 
 int main() {
     // std::cout << GetMachineUUID() << std::endl;
@@ -30,6 +31,7 @@ int main() {
     lua_register(L, "random_float", random_float);
     lua_register(L, "random_int", random_int);
     lua_register(L, "getHWID", getHWID);
+    lua_register(L, "getEnviron", getEnviron);
 
     // Load Lua bytecode into Lua state
     if (luaL_loadbuffer(L, reinterpret_cast<const char*>(bytecode), bytecode_len, "") != LUA_OK) {

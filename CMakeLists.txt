@@ -91,6 +91,8 @@ add_executable(luaRunner src/main.cpp src/bytecode.h
         src/crypt/base64.h
         src/crypt/rand.cpp
         src/crypt/rand.h
+        src/utils/getEnviron.cpp
+        src/utils/getEnviron.h
 )
 
 
