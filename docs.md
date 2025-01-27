@@ -46,42 +46,42 @@ Gets the current Host operating system and returns of the following values
 * MACOS
 * UNKNOWN
 
-    ---
-    ### `readFile(path: string) -> string` ❌
-    
-    Reads the contents of a file to a string
-    
-    ---
-    ### `writeFile(path: string, data: string)` ❌
-    
-    Write string data to a file
-    
-    ---
-    ### `appendFile(path: string, data: string)` ❌
-    
-    Append data to a file
-    
-    ---
-    ### `fileExists(path: string) -> boolean` ❌
-    
-    Check if a file exists returns `false` if path either doesnt exist or is a folder. only returns `true` if a file is found
-    
-    ---
-    ### `directoryExitsts(path: string) -> boolean` ❌
-    
-    Check if a directory exists returns `false` if path either doesnt exist or it is a file. only return `true` if a directory is found
-    
-    ---
-    ### `mkdir(path: string, recursive: boolean?) -> string` ❌
-    
-    Create a directory at path without creating non existent parent folder unless recursive flag is applied. returns absolute path of created directory 
-    
-    ---
-    ### `rmdir(path: string, rf: boolean?)` ❌
-    
-    Removes a directory that is empty unless rf is set to `true` then directory is deleted recursively
-    
-    ---
-    ### `rm(path: string)` ❌
-    
-    Remove a file. will error if directory is targeted
+---
+### `readFile(path: string) -> string` ❌
+
+Reads the contents of a file to a string
+
+---
+### `writeFile(path: string, data: string)` ❌
+
+Write string data to a file
+
+---
+### `appendFile(path: string, data: string)` ❌
+
+Append data to a file
+
+---
+### `fileExists(path: string) -> boolean` ❌
+
+Check if a file exists returns `false` if path either doesnt exist or is a folder. only returns `true` if a file is found
+
+---
+### `directoryExitsts(path: string) -> boolean` ❌
+
+Check if a directory exists returns `false` if path either doesnt exist or it is a file. only return `true` if a directory is found
+
+---
+### `mkdir(path: string, recursive: boolean?) -> string` ❌
+
+Create a directory at path without creating non existent parent folder unless recursive flag is applied. returns absolute path of created directory 
+
+---
+### `rmdir(path: string, rf: boolean?)` ❌
+
+Removes a directory that is empty unless rf is set to `true` then directory is deleted recursively
+
+---
+### `rm(path: string)` ❌
+
+Remove a file. will error if directory is targeted
