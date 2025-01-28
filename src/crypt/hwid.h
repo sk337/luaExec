@@ -9,6 +9,6 @@
 
 
 std::string GetMachineUUID();
-int getHWID(lua_State *L);
+int luaL_getHWID(lua_State *L);
 
 #endif //HWID_H

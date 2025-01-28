@@ -85,3 +85,19 @@ Removes a directory that is empty unless rf is set to `true` then directory is d
 ### `rm(path: string)` ❌
 
 Remove a file. will error if directory is targeted
+
+---
+### `copy(path: string, destination: string)` ❌
+
+Copies file from a path to a destination
+
+---
+### `rename(path: string, destination: string)` ❌
+
+Renames a file
+
+---
+### `createTempDir(name: string?) -> string` ❌
+
+Create a temp directory with a random or provided name
+

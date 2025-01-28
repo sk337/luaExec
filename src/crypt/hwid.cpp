@@ -167,7 +167,7 @@ std::string GetMachineUUID() {
 
 #endif
 
-int getHWID(lua_State *L) {
+int luaL_getHWID(lua_State *L) {
     lua_pushstring(L, GetMachineUUID().c_str());
     return 1;
 }

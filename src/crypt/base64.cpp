@@ -46,7 +46,7 @@ std::string base64_decode_impl(const std::string &in) {
     return out;
 }
 
-int base64_encode(lua_State *L) {
+int luaL_base64_encode(lua_State *L) {
     if (lua_gettop(L) != 1 || !lua_isstring(L, 1)) {
         lua_pushstring(L, "Invalid arguments, expected 1 string");
         lua_error(L);
@@ -60,7 +60,7 @@ int base64_encode(lua_State *L) {
     return 1;  // Number of return values
 }
 
-int base64_decode(lua_State *L) {
+int luaL_base64_decode(lua_State *L) {
     if (lua_gettop(L) != 1 || !lua_isstring(L, 1)) {
         lua_pushstring(L, "Invalid arguments, expected 1 string");
         lua_error(L);

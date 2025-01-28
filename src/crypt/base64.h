@@ -7,7 +7,7 @@
 
 #include<lua.hpp>
 
-int base64_encode(lua_State *L);
-int base64_decode(lua_State *L);
+int luaL_base64_encode(lua_State *L);
+int luaL_base64_decode(lua_State *L);
 
 #endif //BASE64_H

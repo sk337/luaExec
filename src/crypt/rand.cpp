@@ -9,7 +9,7 @@
 #include <sstream>
 #include <iomanip>
 
-int random_bytes(lua_State *L) {
+int luaL_random_bytes(lua_State *L) {
     int num_bytes;
 
     // Validate arguments
@@ -52,7 +52,7 @@ int random_bytes(lua_State *L) {
     return 1; // Number of return values
 }
 
-int random_int(lua_State* L) {
+int luaL_random_int(lua_State* L) {
     // Validate arguments
     if (lua_gettop(L) != 2 || !lua_isnumber(L, 1) || !lua_isnumber(L, 2)) {
         lua_pushstring(L, "Invalid arguments. Must provide 2 numbers (min, max).");
@@ -79,7 +79,7 @@ int random_int(lua_State* L) {
     return 1; // Number of return values
 }
 
-int random_float(lua_State* L) {
+int luaL_random_float(lua_State* L) {
     // Validate arguments (should have none)
     if (lua_gettop(L) != 0) {
         lua_pushstring(L, "Invalid arguments. random_float takes no arguments.");
