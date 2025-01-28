@@ -6,7 +6,7 @@
 #define GETENVRION_H
 #include <lua.hpp>
 
-int getEnviron(lua_State* L);
+int luaL_getEnviron(lua_State* L);
 
 
 #endif //GETENVRION_H

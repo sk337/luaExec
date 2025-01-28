@@ -4,7 +4,6 @@
 
 #include <lua.hpp>
 #include <iostream>
-#include <OleCtl.h>
 
 #include "bytecode.h"
 #include "crypt/hwid.h"
@@ -25,13 +24,13 @@ int main() {
     // Open standard Lua libraries
     luaL_openlibs(L);
 
-    lua_register(L, "base64_decode", base64_decode);
-    lua_register(L, "base64_encode", base64_encode);
-    lua_register(L, "random_bytes", random_bytes);
-    lua_register(L, "random_float", random_float);
-    lua_register(L, "random_int", random_int);
-    lua_register(L, "getHWID", getHWID);
-    lua_register(L, "getEnviron", getEnviron);
+    lua_register(L, "base64_decode", luaL_base64_decode);
+    lua_register(L, "base64_encode", luaL_base64_encode);
+    lua_register(L, "random_bytes", luaL_random_bytes);
+    lua_register(L, "random_float", luaL_random_float);
+    lua_register(L, "random_int", luaL_random_int);
+    lua_register(L, "getHWID", luaL_getHWID);
+    lua_register(L, "getEnviron", luaL_getEnviron);
 
     // Load Lua bytecode into Lua state
     if (luaL_loadbuffer(L, reinterpret_cast<const char*>(bytecode), bytecode_len, "") != LUA_OK) {

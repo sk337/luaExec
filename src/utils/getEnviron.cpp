@@ -5,7 +5,7 @@
 #include "getEnviron.h"
 
 
-int getEnviron(lua_State *L) {
+int luaL_getEnviron(lua_State *L) {
 #ifdef _WIN32
     lua_pushstring(L, "WINDOWS");
 #elif defined(__linux__)
