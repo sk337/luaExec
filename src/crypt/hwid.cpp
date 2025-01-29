@@ -23,17 +23,16 @@ std::string GetMachineUUID() {
         return "COM initialization failed.";
     }
 
-    // Initialize security
     hres = CoInitializeSecurity(
         NULL,
-        -1,                          // Default authentication service
-        NULL,                        // Default authorization service
-        NULL,                        // Reserved
-        RPC_C_AUTHN_LEVEL_DEFAULT,   // Default authentication
-        RPC_C_IMP_LEVEL_IMPERSONATE, // Default impersonation
-        NULL,                        // Authentication info
-        EOAC_NONE,                   // Additional capabilities
-        NULL                         // Reserved
+        -1,
+        NULL,
+        NULL,
+        RPC_C_AUTHN_LEVEL_DEFAULT,
+        RPC_C_IMP_LEVEL_IMPERSONATE,
+        NULL,
+        EOAC_NONE,
+        NULL
     );
 
     if (FAILED(hres)) {

@@ -7,6 +7,8 @@
 
 #include <lua.hpp>
 
+/// function exposed to lua to allow reading of Files
+/// <example>local fileContent = readFile("");</example>
 int luaL_readFile(lua_State* L);
 int luaL_writeFile(lua_State* L);
 int luaL_appendFile(lua_State* L);

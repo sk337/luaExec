@@ -96,4 +96,5 @@ external/lua/
 # ignore luac ouput and bytecode files
 luac.out
 src/bytecode.h
+!source.lua
 *.lua

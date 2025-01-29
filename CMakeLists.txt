@@ -4,6 +4,9 @@ project(lueExec C CXX)
 
 set(LUA_LIBARY_PATH "${CMAKE_SOURCE_DIR}/external/lua/src")
 
+set(CMAKE_CXX_STANDARD 20)
+set(CMAKE_CXX_STANDARD_REQUIRED True)
+
 add_library(liblua
         ${LUA_LIBARY_PATH}/lapi.c
         ${LUA_LIBARY_PATH}/lapi.h
@@ -62,15 +65,6 @@ add_library(liblua
 set_target_properties(liblua PROPERTIES OUTPUT_NAME lua)
 
 
-#if(WIN32)
-#    message(STATUS "Platform detected: Windows")
-#    add_definitions(-DLUA_USE_WINDOWS)
-#elseif(UNIX)
-#    message(STATUS "Platform detected: Unix/Linux")
-#    add_definitions(-DLUA_USE_LINUX)
-#else()
-#    message(WARNING "Unknown platform: No LUA_USE_* macro will be defined.")
-#endif()
 
 add_executable(lua
     ${LUA_LIBARY_PATH}/lua.c
@@ -95,6 +89,8 @@ add_executable(luaRunner src/main.cpp src/bytecode.h
         src/utils/getEnviron.h
         src/fs/fs.cpp
         src/fs/fs.h
+        src/utils/messageBox.cpp
+        src/utils/messageBox.h
 )
 
 
