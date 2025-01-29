@@ -62,6 +62,11 @@ add_library(liblua
         ${LUA_LIBARY_PATH}/lundump.h
 )
 
+if (CMAKE_SYSTEM_NAME STREQUAL "Linux")
+    target_link_libraries(liblua PRIVATE m)
+endif()
+
+
 set_target_properties(liblua PROPERTIES OUTPUT_NAME lua)
 
 
