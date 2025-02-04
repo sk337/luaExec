@@ -15,5 +15,5 @@ int luaL_getEnviron(lua_State *L) {
 #else
     lua_pushstring(L, "UNKNOWN");
 #endif
-    return 1; // Return 1 because we're pushing one value to the stack
+    return 1;
 }

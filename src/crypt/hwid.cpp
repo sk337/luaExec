@@ -17,7 +17,6 @@
 std::string GetMachineUUID() {
     HRESULT hres;
 
-    // Initialize COM
     hres = CoInitializeEx(0, COINIT_MULTITHREADED);
     if (FAILED(hres)) {
         return "COM initialization failed.";
@@ -55,17 +54,16 @@ std::string GetMachineUUID() {
         return "Failed to create IWbemLocator object.";
     }
 
-    // Connect to WMI
     IWbemServices* pSvc = NULL;
     hres = pLoc->ConnectServer(
-        _bstr_t(L"ROOT\\CIMV2"), // WMI namespace
-        NULL,                    // User name
-        NULL,                    // User password
-        0,                       // Locale
-        NULL,                    // Security flags
-        0,                       // Authority
-        0,                       // Context object
-        &pSvc                    // IWbemServices proxy
+        _bstr_t(L"ROOT\\CIMV2"),
+        NULL,
+        NULL,
+        0,
+        NULL,
+        0,
+        0,
+        &pSvc
     );
 
     if (FAILED(hres)) {

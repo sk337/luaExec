@@ -57,7 +57,7 @@ int luaL_base64_encode(lua_State *L) {
     std::string encoded = base64_encode_impl(str);
 
     lua_pushstring(L, encoded.c_str());
-    return 1;  // Number of return values
+    return 1;
 }
 
 int luaL_base64_decode(lua_State *L) {
@@ -71,5 +71,5 @@ int luaL_base64_decode(lua_State *L) {
     std::string decoded = base64_decode_impl(str);
 
     lua_pushstring(L, decoded.c_str());
-    return 1;  // Number of return values
+    return 1;
 }

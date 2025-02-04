@@ -7,8 +7,6 @@
 
 #include <lua.hpp>
 
-/// function exposed to lua to allow reading of File System files
-/// @param  L
 int luaL_readFile(lua_State* L);
 int luaL_writeFile(lua_State* L);
 int luaL_appendFile(lua_State* L);
