@@ -60,4 +60,7 @@ if is_luaExec_closure then
     print("is_luaExec_closure: True")
 end
 
-local response = messageB    ox("Do you want to continue?", "Confirmation", 4)
+
+if envrion == "WINDOWS" then
+    local response = messageBox("Do you want to continue?", "Confirmation", 4)
+end

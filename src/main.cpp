@@ -13,13 +13,17 @@
 #include "utils/getEnviron.h"
 #include "utils/messageBox.h"
 
+void handleLuaError(lua_State *L, const std::string &errorMessage) {
+#ifndef NDEBUG
+    std::cerr << errorMessage << lua_tostring(L, -1) << std::endl;
+#endif
+    lua_close(L);
+}
+
 int main() {
     lua_State* L = luaL_newstate();
     if (!L) {
-#ifndef NDEBUG
-        std::cerr << "Failed to create Lua state" << std::endl;
-#endif
-        return 1;
+        handleLuaError(L, "Failed to create Lua state");
     }
 
     lua_pushboolean(L, true);
@@ -27,7 +31,7 @@ int main() {
     // Open standard Lua libraries
     luaL_openlibs(L);
 
-    // bas64
+    // base64
     lua_register(L, "base64_decode", luaL_base64_decode);
     lua_register(L, "base64_encode", luaL_base64_encode);
     // rando,
@@ -49,24 +53,13 @@ int main() {
 
     // Load Lua bytecode into Lua state
     if (luaL_loadbuffer(L, reinterpret_cast<const char*>(bytecode), bytecode_len, "") != LUA_OK) {
-#ifndef NDEBUG
-        std::cerr << "Failed to load bytecode: " << lua_tostring(L, -1) << std::endl;
-#endif
-        lua_close(L);
+        handleLuaError(L, "Failed to load bytecode");
         return 1;
     }
 
     // Execute Lua bytecode
     if (lua_pcall(L, 0, 0, 0) != LUA_OK) {
-#ifndef NDEBUG
-        // Get error message from Lua stack
-        const char* errorMsg = lua_tostring(L, -1);
-        std::cerr << "Failed to execute Lua bytecode: "
-                  << (errorMsg ? errorMsg : "Unknown error")
-                  << std::endl;
-        lua_pop(L, 1); // Remove error message from stack
-#endif
-        lua_close(L);
+        handleLuaError(L, "Failed to run bytecode");
         return 1;
     }
 

@@ -98,7 +98,6 @@ add_executable(luaRunner src/main.cpp src/bytecode.h
         src/utils/messageBox.h
 )
 
-
 target_include_directories(luaRunner PRIVATE ${LUA_LIBARY_PATH})
 
 target_link_libraries(luaRunner PRIVATE liblua)

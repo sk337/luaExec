@@ -47,27 +47,27 @@ Gets the current Host operating system and returns of the following values
 * UNKNOWN
 
 ---
-### `readFile(path: string) -> string` ❌
+### `readFile(path: string) -> string` ✅
 
 Reads the contents of a file to a string
 
 ---
-### `writeFile(path: string, data: string)` ❌
+### `writeFile(path: string, data: string)` ✅
 
 Write string data to a file
 
 ---
-### `appendFile(path: string, data: string)` ❌
+### `appendFile(path: string, data: string)` ✅
 
 Append data to a file
 
 ---
-### `fileExists(path: string) -> boolean` ❌
+### `fileExists(path: string) -> boolean` ✅
 
 Check if a file exists returns `false` if path either doesnt exist or is a folder. only returns `true` if a file is found
 
 ---
-### `directoryExitsts(path: string) -> boolean` ❌
+### `directoryExitsts(path: string) -> boolean` ✅
 
 Check if a directory exists returns `false` if path either doesnt exist or it is a file. only return `true` if a directory is found
 
@@ -77,22 +77,22 @@ Check if a directory exists returns `false` if path either doesnt exist or it is
 Create a directory at path without creating non existent parent folder unless recursive flag is applied. returns absolute path of created directory 
 
 ---
-### `rmdir(path: string, rf: boolean?)` ❌
+### `rmdir(path: string, rf: boolean?)` ✅
 
 Removes a directory that is empty unless rf is set to `true` then directory is deleted recursively
 
 ---
-### `rm(path: string)` ❌
+### `rm(path: string)` ✅
 
 Remove a file. will error if directory is targeted
 
 ---
-### `copy(path: string, destination: string)` ❌
+### `copy(path: string, destination: string)` ✅
 
 Copies file from a path to a destination
 
 ---
-### `rename(path: string, destination: string)` ❌
+### `rename(path: string, destination: string)` ✅
 
 Renames a file
 
